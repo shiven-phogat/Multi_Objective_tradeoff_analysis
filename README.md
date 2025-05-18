@@ -2,7 +2,7 @@
 
 ## Part 1: Fairness-Aware Classification on the Bank Marketing Dataset
 
-### 📄 Dataset Overview
+### Dataset Overview
 
 The dataset used for this part of the project is the [Bank Marketing Dataset]([https://archive.ics.uci.edu/ml/datasets/bank+marketing](https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset)), This is the classic marketing bank dataset uploaded originally in the UCI Machine Learning Repository. The dataset gives you information about a marketing campaign of a financial institution in which you will have to analyze in order to find ways to look for future strategies in order to improve future marketing campaigns for the bank. Each row corresponds to a client and contains attributes such as:
 
@@ -17,7 +17,7 @@ The dataset used for this part of the project is the [Bank Marketing Dataset]([h
 - **contact**: Contact communication type (`cellular`, etc.)
 - **day**: Last contact day of the month
 
-### 🧠 Problem Statement
+### Problem Statement
 
 We aim to train a binary classifier that predicts whether a client will subscribe to a term deposit (`deposit = yes` or `no`). However, **our primary focus is to ensure fairness in predictions with respect to the `marital` attribute**, particularly between **"single"** and **"divorced"** individuals.
 
@@ -25,7 +25,7 @@ We exclude the "married" category to isolate the fairness analysis to single vs 
 
 ---
 
-## 🧪 Methodology
+## Methodology
 
 ### 1. **Data Preprocessing**
 - Dropped missing values.
@@ -36,13 +36,20 @@ We exclude the "married" category to isolate the fairness analysis to single vs 
 - `marital` was encoded as: `divorced` = 1, `single` = 0 (for fairness computation).
 - Train-test split performed with stratification and standard scaling.
 
-### 2. **Fairness Metric: Demographic Parity Difference (DPD)**
-We compute DPD as:
+### Fairness Metric: Demographic Parity Difference (DPD)
 
-DPD = |P(ŷ = 1 | marital = divorced) - P(ŷ = 1 | marital = single)|
+We define the **Demographic Parity Difference (DPD)** as:
 
+\[
+\text{DPD} = \left| \mathbb{P}(\hat{y} = 1 \mid \text{marital} = \text{divorced}) - \mathbb{P}(\hat{y} = 1 \mid \text{marital} = \text{single}) \right|
+\]
 
-This measures the absolute difference in positive prediction rates between divorced and single individuals.
+Where:
+- \(\hat{y} = 1\) indicates a positive prediction (client subscribes to a term deposit),
+- \(\mathbb{P}(\cdot)\) denotes probability,
+- `marital = divorced` and `marital = single` are the sensitive groups being compared.
+
+A lower DPD indicates a fairer model with respect to marital status.
 
 ### 3. **Model Selection via Bayesian Optimization**
 We perform hyperparameter optimization of a `RandomForestClassifier` using `BayesSearchCV` from `skopt`. The search space includes:
@@ -71,7 +78,7 @@ The best model is selected based on 3-fold cross-validated accuracy.
 
 ---
 
-## 📈 Key Output
+## Key Output
 
 - **Strict Pareto Frontier Points**: Highlights the number of optimal fairness-accuracy trade-off points.
 - **EDA Insight**:
@@ -79,23 +86,11 @@ The best model is selected based on 3-fold cross-validated accuracy.
 
 ---
 
-## 🧮 Conclusion
+## Conclusion
 
 This part of the project evaluates and mitigates potential **unjustified bias** in classification outcomes between clients who are **divorced** and **single**. It applies a **Bayesian-optimized Random Forest model** and a fairness-aware thresholding strategy, demonstrating how predictive performance can be aligned with fairness objectives.
 
 ---
 
-## 📂 Next Section Placeholder
 
-> **Coming Up:**
-> **Part 2: [Your Section Title Here]**
->
-> _[Short summary of what the next part will contain, such as another dataset, deep learning models, causal analysis, etc.]_
 
----
-
-### 👨‍💻 Author
-
-- **Name**: IMT2022050_118
-- **Course**: MOML - Machine Learning for Observational Data
-- **Institution**: [Insert Institution Name Here]
