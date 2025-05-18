@@ -4,24 +4,18 @@
 
 ### 📄 Dataset Overview
 
-The dataset used for this part of the project is the [Bank Marketing Dataset](https://archive.ics.uci.edu/ml/datasets/bank+marketing), which contains information about a marketing campaign carried out by a Portuguese banking institution. Each row corresponds to a client and contains attributes such as:
+The dataset used for this part of the project is the [Bank Marketing Dataset]([https://archive.ics.uci.edu/ml/datasets/bank+marketing](https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset)), This is the classic marketing bank dataset uploaded originally in the UCI Machine Learning Repository. The dataset gives you information about a marketing campaign of a financial institution in which you will have to analyze in order to find ways to look for future strategies in order to improve future marketing campaigns for the bank. Each row corresponds to a client and contains attributes such as:
 
 - **age**: Age of the client
 - **job**: Type of job (e.g., admin, technician, etc.)
 - **marital**: Marital status (`single`, `married`, `divorced`)
+- **education**: Education completed (`secondary`, `tertiary`, etc)
 - **default**: Has credit in default? (`yes`/`no`)
 - **balance**: Average yearly balance in euros
-- **housing**: Has housing loan? (`yes`/`no`)
+- **housing**: Has housing? (`yes`/`no`)
 - **loan**: Has personal loan? (`yes`/`no`)
-- **contact**: Contact communication type
+- **contact**: Contact communication type ('cellular', etc.)
 - **day**: Last contact day of the month
-- **month**: Last contact month of the year
-- **duration**: Duration of last contact (in seconds)
-- **campaign**: Number of contacts performed during this campaign
-- **pdays**: Number of days since the client was last contacted
-- **previous**: Number of contacts performed before this campaign
-- **poutcome**: Outcome of the previous marketing campaign
-- **deposit**: Target variable - has the client subscribed to a term deposit? (`yes`/`no`)
 
 ### 🧠 Problem Statement
 
