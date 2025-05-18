@@ -38,18 +38,16 @@ We exclude the "married" category to isolate the fairness analysis to single vs 
 
 ### Fairness Metric: Demographic Parity Difference (DPD)
 
-We define the **Demographic Parity Difference (DPD)** as:
+The **Demographic Parity Difference (DPD)** is defined as:
 
-\[
-\text{DPD} = \left| \mathbb{P}(\hat{y} = 1 \mid \text{marital} = \text{divorced}) - \mathbb{P}(\hat{y} = 1 \mid \text{marital} = \text{single}) \right|
-\]
+  **DPD = abs(P(ŷ = 1 | marital = divorced) - P(ŷ = 1 | marital = single))**
 
 Where:
-- \(\hat{y} = 1\) indicates a positive prediction (client subscribes to a term deposit),
-- \(\mathbb{P}(\cdot)\) denotes probability,
-- `marital = divorced` and `marital = single` are the sensitive groups being compared.
+- `ŷ = 1` means the model predicts that the client will subscribe to a term deposit.
+- `P(...)` denotes the probability.
+- The expression measures the difference in positive prediction rates between divorced and single individuals.
 
-A lower DPD indicates a fairer model with respect to marital status.
+A lower DPD value indicates that the model is more fair with respect to the `marital` status.
 
 ### 3. **Model Selection via Bayesian Optimization**
 We perform hyperparameter optimization of a `RandomForestClassifier` using `BayesSearchCV` from `skopt`. The search space includes:
