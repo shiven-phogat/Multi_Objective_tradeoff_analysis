@@ -36,7 +36,7 @@ We exclude the "married" category to isolate the fairness analysis to single vs 
 - `marital` was encoded as: `divorced` = 1, `single` = 0 (for fairness computation).
 - Train-test split performed with stratification and standard scaling.
 
-### Fairness Metric: Demographic Parity Difference (DPD)
+### 2. **Fairness Metric: Demographic Parity Difference (DPD)**
 
 The **Demographic Parity Difference (DPD)** is defined as:
 
@@ -79,6 +79,10 @@ The best model is selected based on 3-fold cross-validated accuracy.
 ## Key Output
 
 - **Strict Pareto Frontier Points**: Highlights the number of optimal fairness-accuracy trade-off points.
+
+
+ <img src = "images/pareto_frontier_banking.jpeg" width = "500" height = "400" style="display: block; margin: auto;"/>
+
 - **EDA Insight**:
   - Percentage of `deposit = yes` for `divorced` vs `single` shows existing bias in the raw dataset.
 
