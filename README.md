@@ -14,7 +14,7 @@ The dataset used for this part of the project is the [Bank Marketing Dataset]([h
 - **balance**: Average yearly balance in euros
 - **housing**: Has housing? (`yes`/`no`)
 - **loan**: Has personal loan? (`yes`/`no`)
-- **contact**: Contact communication type ('cellular', etc.)
+- **contact**: Contact communication type (`cellular`, etc.)
 - **day**: Last contact day of the month
 
 ### 🧠 Problem Statement
