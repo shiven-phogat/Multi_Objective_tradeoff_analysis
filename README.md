@@ -171,12 +171,13 @@ A **smaller DPD** indicates greater fairness.
 
 ## Key Output
 
-- **Pareto Frontier Plot** showing optimal fairness-accuracy trade-offs.
+- **Pareto Frontier Plot** showing optimal fairness-accuracy trade-offs using 2 different approaches in alpha selection ,adaptive and fixed interval brute force 
 
-<img src="images/pareto_frontier_insurance.jpeg" width="500" height="400" style="display: block; margin: auto;" />
+<img src="images/pareto_frontier_insurance_1.png" width="500" height="400" style="display: block; margin: auto;" />
+<img src="images/pareto_frontier_insurance_2.png" width="500" height="400" style="display: block; margin: auto;" />
 
 - **EDA Insight**:
-  - Found a significant gap in `Response=1` rates between male and female customers, indicating potential existing bias.
+  - Found a minute gap in `Response=1` rates between male and female customers, indicating potential existing bias.
 
 ---
 
