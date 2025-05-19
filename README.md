@@ -176,8 +176,10 @@ A **smaller DPD** indicates greater fairness.
 <img src="images/pareto_frontier_insurance_1.png" width="500" height="400" style="display: block; margin: auto;" />
 <img src="images/pareto_frontier_insurance_2.png" width="500" height="400" style="display: block; margin: auto;" />
 
-- **EDA Insight**:
-  - Found a minute gap in `Response=1` rates between male and female customers, indicating potential existing bias.
+- **Experimental Insight**:
+  - The gap between the pareto frontier points is extremely small . This is because in our inital trials as we had noted the general trend of the curve was reducing DPD gave increased bias.
+  - The pareto optimal curve thus obtained is very small because the tradeoff exists in a very small region.
+  - Thus we observe only 7 pareto optimal points using both the approaches.
 
 ---
 
